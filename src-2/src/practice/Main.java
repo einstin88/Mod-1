@@ -16,7 +16,7 @@ public class Main {
             String command = cons.readLine("> ");
             split_commands = command.trim().toLowerCase().split(" ");
 
-            if (split_commands.length > 0) {
+            if (!split_commands[0].equals("")) {
                 switch (split_commands[0]) {
                     case "add":
                         if (split_commands.length == 1) {
