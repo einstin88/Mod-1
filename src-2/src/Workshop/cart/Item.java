@@ -1,4 +1,4 @@
-package Workshop.cart;
+package workshop.cart;
 
 public class Item {
     private String name;

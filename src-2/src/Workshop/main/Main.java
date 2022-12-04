@@ -1,8 +1,8 @@
-package Workshop.main;
+package workshop.main;
 
-import Workshop.cart.Apple;
-import Workshop.cart.Item;
-import Workshop.cart.Orange;
+import workshop.cart.Apple;
+import workshop.cart.Item;
+import workshop.cart.Orange;
 
 public class Main {
     public static void main(String[] args) {
@@ -26,6 +26,7 @@ public class Main {
         Apple washington = (Apple) item;
         washington.setType("Washington");
 
+        // Test a superclass item before casting
         if (item instanceof Orange) {
             orange = (Orange) item;
         }

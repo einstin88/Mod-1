@@ -1,4 +1,4 @@
-package Workshop.cart;
+package workshop.cart;
 
 public class Apple extends Item{
     private String type;
