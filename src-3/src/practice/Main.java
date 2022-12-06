@@ -7,9 +7,13 @@ import practice.shop.Cart;
 public class Main {
     // Declare constants
     public static final String ADD = "add";
-    public static final String LIST = "list";
     public static final String CHECKOUT = "checkout";
+    public static final String DELETE = "delete";
     public static final String EXIT = "exit";
+    public static final String LIST = "list";
+    public static final String SAVE = "save";
+
+    public static final String DEFAULT_DB = "db";
 
     public static void main(String[] args) {
         Console cons = System.console();
@@ -17,6 +21,8 @@ public class Main {
         String[] split_commands = new String[0];
 
         System.out.println("Welcome to your shopping cart");
+        System.out.println(args.length);
+
 
         do {
             String command = cons.readLine("> ");

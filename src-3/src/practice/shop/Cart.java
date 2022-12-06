@@ -6,15 +6,10 @@ import java.util.Set;
 
 public class Cart {
    // Create a type of list to store items in the cart
-   private Set<Item> cart = new LinkedHashSet<>();
-   private String userName;
+   public Set<Item> cart = new LinkedHashSet<>();
 
    // Option to create cart with a username
    public Cart() {
-   }
-
-   public Cart(String userName) {
-      this.userName = userName;
    }
 
    /*
@@ -24,13 +19,6 @@ public class Cart {
     * - list to list out all the items in the cart
     * - checkout to output the total price of everything in the car
     */
-   public String getUserName() {
-      return userName;
-   }
-
-   public void setUserName(String userName) {
-      this.userName = userName;
-   }
 
    // Class methods
    // Options to add item in various forms

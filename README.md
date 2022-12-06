@@ -13,4 +13,4 @@ Contains source codes from class examples and exercises.
 1. Classes, Derived Classes and Interfaces
 2. Overriding and overloading
 3. Casting
-
+*Note: self-learnt [string formatting](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html)*
