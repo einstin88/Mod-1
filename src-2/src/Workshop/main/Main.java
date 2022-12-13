@@ -16,7 +16,7 @@ public class Main {
         // orange.setQuantity(15);
 
         Apple apple = new Apple(); 
-        Orange orange = new Orange();
+        // Orange orange = new Orange();
 
         apple.setType("Washington");
 
@@ -28,7 +28,7 @@ public class Main {
 
         // Test a superclass item before casting
         if (item instanceof Orange) {
-            orange = (Orange) item;
+            // orange = (Orange) item;
         }
     }
 }
