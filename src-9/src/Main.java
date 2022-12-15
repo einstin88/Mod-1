@@ -23,9 +23,11 @@ public class Main {
                 // Check the reference argument to be assigned
                 if (args[i].trim().equals(ARG_PORT)) {
                     port = Integer.parseInt(args[i + 1]);
+
                 } else if (args[i].trim().equals(ARG_STATIC_DIR)) {
                     String[] paths = args[i + 1].trim().split(":");
                     staticPath = List.of(paths);
+
                 } else {
                     System.out.println("Error! Incorrect argument specified");
                     return;
@@ -43,6 +45,7 @@ public class Main {
         System.out.printf("Static directory \t--> %s%n%n", staticPath);
         System.out.println("Starting server application...");
 
+        // Spawns the web server
         HttpServer webServer = new HttpServer(port, staticPath);
         try {
             webServer.StartServer();

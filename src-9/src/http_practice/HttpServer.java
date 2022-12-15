@@ -12,25 +12,29 @@ import java.util.concurrent.Executors;
 
 public class HttpServer {
     /*
-     * 
+     * Spawns a multi-threaded server
      */
 
+    // Instance variables
     Integer port;
     List<String> staticPath;
 
+    // Constructor
     public HttpServer(Integer port, List<String> staticPath) {
         this.port = port;
         this.staticPath = staticPath;
     }
 
+    // Main Method
     public void StartServer() throws IOException {
         /*
          * - Open TCP Connection
          * - Verify static path is valid
          */
 
-        Socket serverSocket;
+        // Instance variables
         ServerSocket server;
+        Socket serverSocket;
 
         // Verify if static paths are valid
         for (String dirPathRaw : staticPath) {
@@ -41,15 +45,16 @@ public class HttpServer {
             }
         }
 
-        // Start the server
+        // Starts the server
         ExecutorService threadPool = Executors.newFixedThreadPool(3);
         server = new ServerSocket(port);
-        System.out.printf(">> Server started. Listening to incoming connections on port %d%n", port);
+        System.out.printf("-> Server started. Listening to incoming connections on port %d%n", port);
 
         while (true) {
             serverSocket = server.accept();
-            System.out.printf(">> New client connected at port -> %d%n", serverSocket.getPort());
+            System.out.printf("-> New client connected at port -> %d%n", serverSocket.getPort());
 
+            // Pass the client to a child thread for handling http messaging
             HttpClientConnection client = new HttpClientConnection(serverSocket, staticPath);
             threadPool.submit(client);
         }
