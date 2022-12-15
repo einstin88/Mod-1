@@ -37,8 +37,11 @@ public class ThreadedListServer {
                     dis, dos, serverSocket);
                 threadpool.submit(newClient);
             }
+
+            
         } catch (IOException e) {
             System.out.println("Error on starting server at port: " + port);
         }
+        threadpool.shutdown();
     }
 }
