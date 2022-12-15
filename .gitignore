@@ -1,3 +1,9 @@
 *.class
 classes
 .vscode
+
+*.html
+*.css
+*.png
+
+*static
