@@ -84,11 +84,12 @@ public class HttpClientConnection implements Runnable {
                                     "HTTP/1.1 %s\r\nContent-Type: image/png\r\nContent-Length: %d\r\n".formatted(RESP_OK, payLoad.length)
                                 );
                                 System.out.printf(
-                                    "HTTP/1.1 %s\r\nContent-Type: image/png\r\nContent-Length: %d%n", RESP_OK, payLoad.length
+                                    ">> HTTP/1.1 %s\r\nContent-Type: image/png\r\nContent-Length: %d%n", RESP_OK, payLoad.length
                                 );
                             } else {
                                 hr.writeString(responseHeader(RESP_OK));
                             }
+                            System.out.printf(">> %s%n%n", resourcePath);
                             // Write bytes out after the headers
                             hr.writeBytes(payLoad);
 

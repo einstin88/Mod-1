@@ -32,15 +32,15 @@ public class HttpServer {
          * - Verify static path is valid
          */
 
-        // Instance variables
+        // Run-time Variables
         ServerSocket server;
         Socket serverSocket;
 
         // Verify if static paths are valid
-        for (String dirPathRaw : staticPath) {
-            Path path = Paths.get(dirPathRaw);
+        for (String dirPath : staticPath) {
+            Path path = Paths.get(dirPath);
             if (Files.notExists(path) | !Files.isDirectory(path) | !Files.isReadable(path)) {
-                System.out.printf("Error! Could not access \"%s\"%n%Exiting...%n", dirPathRaw);
+                System.out.printf("Error! Could not access \"%s\"%n%Exiting...%n", dirPath);
                 System.exit(1);
             }
         }
